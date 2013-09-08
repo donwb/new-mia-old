@@ -1,0 +1,22 @@
+body {
+  padding-top: 50px;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.navbar-brand {
+	font-family: 'Kaushan Script', sans-serif;
+	font-size: 33px;
+}
+
+.jumbotron {
+	padding: 30px;
+	background-color: #454545;
+}
+
+#myCarousel img {
+	height:500px;
+
+}
