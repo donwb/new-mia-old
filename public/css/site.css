@@ -1,5 +1,6 @@
 body {
   padding-top: 50px;
+  background-color: rgba(231,231,231,1);
 }
 .starter-template {
   padding: 40px 15px;
@@ -32,3 +33,24 @@ body {
 	text-align: center;
 	margin-bottom: 15px;
 }
+
+.home-panels {
+    height: 300px;
+}
+
+.listing-box {
+    width: 220px;
+    height: 196px;
+    background-color: white;
+    margin: 5px;
+}
+
+.listing-image {
+    width: 201px;
+    height: 121px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+
+
