@@ -39,10 +39,10 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#" id="home">Home</a></li>
-            <li><a href="#" id="listings">Listings</a></li>
-            <li><a href="#customers">Customers</a></li>
-            <li><a href="#contact">About</a></li>
+            <li class="active" id="li-home"><a href="#" id="home">Home</a></li>
+            <li id="li-listings"><a href="#" id="listings">Listings</a></li>
+            <li id="li-customers"><a href="#customers">Customers</a></li>
+            <li id="li-about"><a href="#about">About</a></li>
           </ul>
           <ul class="nav navbar-nav pull-right">
             <li><a class="phone">Phone: 770-820-6638</a></li>
@@ -61,6 +61,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="assets/js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/underscore.js"></script>
 
     <script id="home-template" type="text/x-handlebars-template">
       <div class="jumbotron">
@@ -152,6 +153,9 @@
           <div class="col-md-3">
             <div class="listing-box">
               <img src="http://templates.cms-guide.com/45774/images/page1-img1.jpg" class="listing-image"/>
+              <div class="address">2009 Livingston Dr Marietta, GA 30064</div>
+              <div class="description">4br 2 1/2 ba home on 1/3 of an acre</div>
+              <div class="price">$453,000</div>
             </div>
           </div>
           <div class="col-md-3">
@@ -243,11 +247,30 @@
       function loadHome() {
         var template = Handlebars.compile($("#home-template").html());
         $('#content').html(template({}));
+
+        toggleMenuBar('li-home');
       }
 
       function loadListings() {
         var template = Handlebars.compile($("#listings-template").html());
-          $('#content').html(template({})); 
+          $('#content').html(template({}));
+          toggleMenuBar('li-listings');
+      }
+
+      function toggleMenuBar(activeButton) {
+        // reimpl w/o hardcoded list
+        var items = ['li-home', 'li-listings', 'li-customers', 'li-about'];
+        console.log(items);
+
+        _.each(items, function(item) {
+          console.log(item);
+
+          if(item === activeButton) {
+            $('#'+item).addClass('active');
+          } else {
+            $('#' + item).removeClass('active');
+          }
+        });
       }
 
     </script>
